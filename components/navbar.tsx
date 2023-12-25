@@ -5,9 +5,9 @@ import getCategories from "@/actions/get-categories";
 import NavBarActions from "@/components/navbar-actions";
 import DarkModeSwitch from "@/components/darkmode-switch";
 
+export const revalidate = 0;
 const NavBar = async () => {
   const categories = await getCategories();
-  console.log(categories);
   return (
     <div className='border-b'>
       <Container>
