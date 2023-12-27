@@ -12,13 +12,11 @@ const HomePage = async () => {
     <Container>
       <div className='space-y-10 pb-10'>
         {billboards?.map((billboard) => (
-          <div key={billboard.id}>
-            <Billboard data={billboard} />
-          </div>
+          <Billboard key={billboard.id} data={billboard} />
         ))}
-      </div>
-      <div className='flex flex-col gapy-y-8 px-4 sm:px-6 lg:px-8'>
-        <ProductList title={"Products"} items={products} />
+        <div className='flex flex-col gapy-y-8 px-4 sm:px-6 lg:px-8'>
+          <ProductList title={"Products"} items={products} />
+        </div>
       </div>
     </Container>
   );

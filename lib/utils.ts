@@ -13,3 +13,8 @@ export const DynamicDarkModeSwitch = dynamic(
     ssr: false, // Disable server-side rendering for this component
   }
 );
+
+export const formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+});
