@@ -65,7 +65,6 @@ export const Button = forwardRef<HTMLButtonElement, IButtonProps>(
   ({ className, children, disabled, type = "button", ...props }, ref) => {
     return (
       <button
-        ref={ref}
         className={cn(
           `
     w-auto
@@ -83,6 +82,8 @@ export const Button = forwardRef<HTMLButtonElement, IButtonProps>(
     `,
           className
         )}
+        ref={ref}
+        {...props}
       >
         {children}
       </button>
