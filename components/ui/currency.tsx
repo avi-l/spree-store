@@ -1,5 +1,5 @@
 "use client";
-import useIsMounted from "@/hooks/useIsMounted";
+import useIsMounted from "@/hooks/use-is-mounted";
 import { formatter } from "@/lib/utils";
 
 interface ICurrencyProps {

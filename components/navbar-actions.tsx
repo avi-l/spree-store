@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import useIsMounted from "@/hooks/useIsMounted";
+import useIsMounted from "@/hooks/use-is-mounted";
 import { ShoppingBag } from "lucide-react";
 import { useEffect, useState } from "react";
 
