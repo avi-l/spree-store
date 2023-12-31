@@ -17,7 +17,6 @@ const NavBar = async () => {
           </Link>
           <MainNav data={categories} />
           <NavBarActions />
-          <DarkModeSwitch />
         </div>
       </Container>
     </div>
