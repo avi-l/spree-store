@@ -1,10 +1,8 @@
 import { create } from "zustand";
-import { toast } from "react-hot-toast";
-import { persist, createJSONStorage } from "zustand/middleware";
 
 import { IProduct } from "@/types";
-import { AlertTriangle } from "lucide-react";
-
+import { persist, createJSONStorage } from "zustand/middleware";
+import toast from "react-hot-toast";
 interface CartStore {
   items: IProduct[];
   addItem: (data: IProduct) => void;
@@ -19,19 +17,20 @@ const useCart = create(
       addItem: (data: IProduct) => {
         const currentItems = get().items;
         const existingItem = currentItems.find((item) => item.id === data.id);
-
         if (existingItem) {
-          return toast("Item already in cart.");
+          return toast("Item already in cart");
         }
-
         set({ items: [...get().items, data] });
-        toast.success("Item added to cart.");
+        toast.success("Item Added to Cart");
       },
       removeItem: (id: string) => {
         set({ items: [...get().items.filter((item) => item.id !== id)] });
-        toast.success("Item removed from cart.");
+        toast.success("Item Removed from Cart");
       },
-      removeAll: () => set({ items: [] }),
+      removeAll: () => {
+        set({ items: [] });
+        toast.success("All Items Removed from Cart");
+      },
     }),
     {
       name: "cart-storage",
