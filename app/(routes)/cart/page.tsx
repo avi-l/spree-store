@@ -9,7 +9,7 @@ import Summary from "./components/summary";
 const CartPage = () => {
   const cart = useCart();
   const isMounted = useIsMounted();
-  if (!isMounted) return null;
+  if (!isMounted || !cart) return null;
   return (
     <div className='bg-white'>
       <Container>
