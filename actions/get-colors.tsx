@@ -1,13 +1,13 @@
 import { Color } from "@/types";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 const URL = `${process.env.NEXT_PUBLIC_API_URL}/colors`;
 
 const getColors = async (): Promise<Color[]> => {
   try {
-    const response = await axios.get(URL);
+    const response: AxiosResponse = await axios.get(URL);
     return response.data;
   } catch (error) {
-    console.error("Error fetching categories:", error);
+    console.error("Error fetching:", error);
     throw error;
   }
 };

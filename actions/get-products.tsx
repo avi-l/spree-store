@@ -1,6 +1,6 @@
 import { IProduct } from "@/types";
 import qs from "query-string";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 const URL = `${process.env.NEXT_PUBLIC_API_URL}/products`;
 
 interface Query {
@@ -19,7 +19,11 @@ const getProducts = async (query: Query): Promise<IProduct[]> => {
       isFeatured: query.isFeatured,
     },
   });
-  const res = await axios.get(url);
-  return res.data;
+  try {
+    const response: AxiosResponse = await axios.get(url);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 };
 export default getProducts;

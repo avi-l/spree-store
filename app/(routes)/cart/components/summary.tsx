@@ -1,6 +1,6 @@
 "use client";
 
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 
@@ -30,14 +30,19 @@ const Summary = () => {
   }, 0);
 
   const onCheckout = async () => {
-    const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
-      {
-        productIds: items.map((item) => item.id),
-      }
-    );
+    try {
+      const response: AxiosResponse = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
+        {
+          productIds: items.map((item) => item.id),
+        }
+      );
 
-    window.location = response.data.url;
+      window.location = response.data.url;
+    } catch (error) {
+      toast.error("Hm, there was a checkout problem");
+      console.error(error);
+    }
   };
 
   return (
