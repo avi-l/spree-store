@@ -65,6 +65,7 @@ export const Button = forwardRef<HTMLButtonElement, IButtonProps>(
   ({ className, children, disabled, type = "button", ...props }, ref) => {
     return (
       <button
+        disabled={disabled}
         className={cn(
           `
     w-auto
