@@ -7,8 +7,8 @@ import CartItem from "./components/cart-item";
 import Summary from "./components/summary";
 
 const CartPage = () => {
-  const isMounted = useIsMounted();
   const cart = useCart();
+  const isMounted = useIsMounted();
   if (!isMounted) return null;
   return (
     <div className='bg-white'>
