@@ -10,10 +10,11 @@ interface IMainNavProps {
 }
 const MainNav: React.FC<IMainNavProps> = ({ data }) => {
   const pathname = usePathname();
+  if (!data?.length) return null;
   const routes =
     data?.map((route) => ({
       href: `/category/${route.id}`,
-      label: route.name,
+      label: route?.name,
       active: pathname === `/category/${route.id}`,
     })) || [];
   return (
@@ -24,7 +25,7 @@ const MainNav: React.FC<IMainNavProps> = ({ data }) => {
           href={route?.href}
           className={cn(
             "text-sm font-medium transition-colors hover:text-black",
-            route.active ? "text-black" : "text-neutral-500"
+            route?.active ? "text-black" : "text-neutral-500"
           )}
         >
           {route?.label}
