@@ -15,6 +15,7 @@ const ProductCard: React.FC<IProductCard> = ({ data }) => {
   const previewModal = usePreviewModal();
   const router = useRouter();
   const cart = useCart();
+  if (!cart) return null;
   const handleClick = () => {
     router.push(`/product/${data?.id}`);
   };
@@ -25,7 +26,7 @@ const ProductCard: React.FC<IProductCard> = ({ data }) => {
   };
   const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
     event.stopPropagation();
-    cart?.addItem(data);
+    cart.addItem(data);
   };
 
   return (

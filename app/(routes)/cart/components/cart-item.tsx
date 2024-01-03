@@ -13,7 +13,7 @@ interface CartItemProps {
 
 const CartItem: React.FC<CartItemProps> = ({ data }) => {
   const cart = useCart();
-
+  if (!cart) return null;
   const onRemove = () => {
     cart.removeItem(data.id);
   };

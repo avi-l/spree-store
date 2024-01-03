@@ -11,7 +11,7 @@ const NavBarActions = () => {
   const isMounted = useIsMounted();
   const router = useRouter();
   if (!isMounted) return null;
-
+  if (!cart) return null;
   return (
     <div className='mx-auto flex items-center gap-x-4'>
       <Button
