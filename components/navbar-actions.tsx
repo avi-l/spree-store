@@ -7,9 +7,9 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const NavBarActions = () => {
+  const cart = useCart();
   const isMounted = useIsMounted();
   const router = useRouter();
-  const cart = useCart();
   if (!isMounted) return null;
 
   return (
