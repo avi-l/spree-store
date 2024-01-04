@@ -18,7 +18,6 @@ const Summary = () => {
       toast.success("Payment completed.");
       removeAll();
     }
-
     if (searchParams.get("canceled")) {
       toast.error("Something went wrong.");
     }
