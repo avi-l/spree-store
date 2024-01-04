@@ -1,5 +1,6 @@
 import { IProduct } from "@/types";
 import axios, { AxiosResponse } from "axios";
+
 const URL = `${process.env.NEXT_PUBLIC_API_URL}/products`;
 
 const getProduct = async (id: string): Promise<IProduct> => {
