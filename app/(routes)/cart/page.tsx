@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 export const revalidate = 0;
 const CartPage = () => {
   const isMounted = useIsMounted();
-  const cart = useCart();
+  //   const cart = useCart();
   if (!isMounted) return null;
   return (
     <div className='bg-white'>
