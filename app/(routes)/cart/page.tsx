@@ -4,7 +4,7 @@ import Container from "@/components/ui/container";
 // import useCart from "@/hooks/use-cart";
 import useIsMounted from "@/hooks/use-is-mounted";
 // import CartItem from "./components/cart-item";
-import Summary from "./components/summary";
+// import Summary from "./components/summary";
 export const revalidate = 0;
 const CartPage = () => {
   const isMounted = useIsMounted();
@@ -26,7 +26,7 @@ const CartPage = () => {
                 ))} */}
               </ul>
             </div>
-            <Summary />
+            {/* <Summary /> */}
           </div>
         </div>
       </Container>
