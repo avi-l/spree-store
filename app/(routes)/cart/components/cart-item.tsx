@@ -15,7 +15,7 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
   const cart = useCart();
   if (!cart) return null;
   const onRemove = () => {
-    cart.removeItem(data.id);
+    cart?.removeItem(data?.id);
   };
 
   return (
@@ -23,7 +23,7 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
       <div className='relative h-24 w-24 rounded-md overflow-hidden sm:h-48 sm:w-48'>
         <Image
           fill
-          src={data.images[0].url}
+          src={data?.images[0].url}
           alt=''
           className='object-cover object-center'
         />
@@ -38,12 +38,12 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
           </div>
 
           <div className='mt-1 flex text-sm'>
-            <p className='text-gray-500'>{data.color.name}</p>
+            <p className='text-gray-500'>{data?.color?.name}</p>
             <p className='ml-4 border-l border-gray-200 pl-4 text-gray-500'>
-              {data.size.name}
+              {data?.size?.name}
             </p>
           </div>
-          <Currency value={data.price} />
+          <Currency value={data?.price} />
         </div>
       </div>
     </li>
