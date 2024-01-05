@@ -23,7 +23,7 @@ const Summary = () => {
     }
   }, [searchParams, removeAll]);
 
-  const totalPrice = items.reduce((total, item) => {
+  const totalPrice = items?.reduce((total, item) => {
     return total + Number(item.price);
   }, 0);
 
@@ -54,7 +54,7 @@ const Summary = () => {
       </div>
       <Button
         onClick={onCheckout}
-        disabled={items.length === 0}
+        disabled={items?.length === 0}
         className='w-full mt-6'
       >
         Checkout
