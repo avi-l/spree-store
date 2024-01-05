@@ -4,14 +4,12 @@ import useCart from "@/hooks/use-cart";
 import useIsMounted from "@/hooks/use-is-mounted";
 import { ShoppingBag } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 
 const NavBarActions = () => {
   const cart = useCart();
   const isMounted = useIsMounted();
   const router = useRouter();
   if (!isMounted) return null;
-  if (!cart) return null;
   return (
     <div className='mx-auto flex items-center gap-x-4'>
       <Button
@@ -20,7 +18,7 @@ const NavBarActions = () => {
       >
         <ShoppingBag size={20} color='white' />
         <span className='ml-2 text-sm font-medium text-white'>
-          {cart?.items?.length}
+          {cart?.items?.length || 0}
         </span>
       </Button>
     </div>
