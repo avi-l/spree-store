@@ -29,10 +29,9 @@ const CartPage = () => {
                 <p className='text-neutral-500'>No items added to cart.</p>
               )}
               <ul>
-                {Array.isArray(cart?.items) &&
-                  cart?.items.map((item) => (
-                    <CartItem key={item?.id} data={item} />
-                  ))}
+                {(cart?.items || []).map((item) => (
+                  <CartItem key={item?.id} data={item} />
+                ))}
               </ul>
             </div>
             <Summary />
