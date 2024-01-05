@@ -5,12 +5,19 @@ import useCart from "@/hooks/use-cart";
 import useIsMounted from "@/hooks/use-is-mounted";
 import CartItem from "./components/cart-item";
 import Summary from "./components/summary";
-
+import { useState, useEffect } from "react";
+export const revalidate = 0;
 const CartPage = () => {
+  const [isMounted, setIsMounted] = useState(false);
   const cart = useCart();
-  //   const isMounted = useIsMounted();
-  //   if (!isMounted) return null;
-  if (!cart) return null;
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
   return (
     <div className='bg-white'>
       <Container>
