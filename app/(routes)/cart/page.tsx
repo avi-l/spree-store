@@ -22,7 +22,7 @@ const CartPage = () => {
               )}
               <ul>
                 {cart?.items.length >= 1 &&
-                  (cart?.items || [])?.map((item) => (
+                  cart?.items?.map((item) => (
                     <CartItem key={item?.id} data={item} />
                   ))}
               </ul>
