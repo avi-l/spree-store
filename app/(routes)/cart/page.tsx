@@ -8,7 +8,7 @@ import Summary from "./components/summary";
 export const revalidate = 0;
 const CartPage = () => {
   const isMounted = useIsMounted();
-  const cart = useCart() || [];
+  const cart = useCart() || { items: [] };
   if (!isMounted) return null;
   return (
     <div className='bg-white'>
