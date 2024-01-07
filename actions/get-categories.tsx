@@ -9,7 +9,7 @@ const getCategories = async (): Promise<ICategory[]> => {
     return response.data;
   } catch (error) {
     console.error("Error fetching:", error);
-    throw error;
+    return [];
   }
 };
 export default getCategories;

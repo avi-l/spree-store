@@ -9,7 +9,7 @@ const getColors = async (): Promise<Color[]> => {
     return response.data;
   } catch (error) {
     console.error("Error fetching:", error);
-    throw error;
+    return [];
   }
 };
 export default getColors;
