@@ -8,7 +8,7 @@ const getCategory = async (id: string): Promise<ICategory> => {
     const response: AxiosResponse = await axios.get(`${URL}/${id}`);
     return response.data;
   } catch (error) {
-    return [];
+    throw error;
   }
 };
 export default getCategory;

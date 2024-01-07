@@ -8,7 +8,7 @@ const getSizes = async (): Promise<Size[]> => {
     return response.data;
   } catch (error) {
     console.error("Error fetching:", error);
-    return [];
+    throw error;
   }
 };
 export default getSizes;

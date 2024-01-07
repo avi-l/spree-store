@@ -23,7 +23,7 @@ const getProducts = async (query: Query): Promise<IProduct[]> => {
     const response: AxiosResponse = await axios.get(url);
     return response.data;
   } catch (error) {
-    return [];
+    throw error;
   }
 };
 export default getProducts;

@@ -9,7 +9,7 @@ const getProduct = async (id: string): Promise<IProduct> => {
 
     return response.data;
   } catch (error) {
-    return [];
+    throw error;
   }
 };
 export default getProduct;
