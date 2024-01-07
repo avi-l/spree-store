@@ -21,9 +21,10 @@ const CartPage = () => {
                 <p className='text-neutral-500'>No items added to cart.</p>
               )}
               <ul>
-                {(cart?.items || [])?.map((item) => (
-                  <CartItem key={item?.id} data={item} />
-                ))}
+                {cart?.items.length >= 1 &&
+                  (cart?.items || [])?.map((item) => (
+                    <CartItem key={item?.id} data={item} />
+                  ))}
               </ul>
             </div>
             <Summary />
