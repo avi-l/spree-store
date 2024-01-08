@@ -9,6 +9,7 @@ export const revalidate = 0;
 const CartPage = () => {
   const isMounted = useIsMounted();
   const cart = useCart();
+  console.log("CART>>>", cart);
   if (!isMounted) return null;
   return (
     <div className='bg-white'>
