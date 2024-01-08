@@ -12,7 +12,7 @@ const MainNav: React.FC<IMainNavProps> = ({ data }) => {
   const pathname = usePathname();
   if (!data?.length) return null;
   const routes =
-    data?.map((route) => ({
+    (data || [])?.map((route) => ({
       href: `/category/${route.id}`,
       label: route?.name,
       active: pathname === `/category/${route.id}`,
