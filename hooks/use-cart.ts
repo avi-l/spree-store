@@ -14,22 +14,7 @@ interface CartStore {
 const useCart = create(
   persist<CartStore>(
     (set, get) => ({
-      items: [
-        {
-          id: "",
-          name: "string",
-          price: "string",
-          category: {
-            id: "",
-            name: "shoes",
-            billboard: { id: "", label: "", imageUrl: "string" },
-          },
-          size: { id: "string", name: "string", value: "string" },
-          color: { id: "string", name: "string", value: "string" },
-          images: [],
-          isFeatured: true,
-        },
-      ],
+      items: [],
       addItem: (data: IProduct) => {
         const currentItems = get().items;
         const existingItem = currentItems.find((item) => item.id === data.id);
