@@ -10,13 +10,18 @@ interface IMainNavProps {
 }
 const MainNav: React.FC<IMainNavProps> = ({ data }) => {
   const pathname = usePathname();
+  console.log("Type of data:", typeof data);
+  console.log("Value of data:", data);
+
   if (!data?.length) return null;
   const routes =
-    (data || [])?.map((route) => ({
-      href: `/category/${route.id}`,
-      label: route?.name,
-      active: pathname === `/category/${route.id}`,
-    })) || [];
+    (data &&
+      data?.map((route) => ({
+        href: `/category/${route.id}`,
+        label: route?.name,
+        active: pathname === `/category/${route.id}`,
+      }))) ||
+    [];
   return (
     <nav className='mx-6 flex items-center space-x-4 lg:space-x-6'>
       {routes?.map((route) => (
