@@ -6,7 +6,10 @@ import NavBarActions from "@/components/navbar-actions";
 
 export const revalidate = 0;
 const NavBar = async () => {
-  const categories = (await getCategories()) || [];
+  let categories = (await getCategories()) || [];
+
+  if (typeof categories === "string") categories = [];
+
   return (
     <div className='border-b'>
       <Container>
