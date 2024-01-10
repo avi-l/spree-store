@@ -12,7 +12,7 @@ const Summary = () => {
   const searchParams = useSearchParams();
   const items = useCart((state) => state.items);
   const removeAll = useCart((state) => state.removeAll);
-  console.log("items>>>", items);
+
   useEffect(() => {
     if (searchParams?.get("success")) {
       toast.success("Payment completed.");

@@ -10,8 +10,6 @@ interface IMainNavProps {
 }
 const MainNav: React.FC<IMainNavProps> = ({ data }) => {
   const pathname = usePathname();
-  console.log("Type of data:", typeof data);
-  console.log("Value of data:", data);
 
   if (!data?.length) return null;
   const routes =
