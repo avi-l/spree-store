@@ -2,8 +2,6 @@
 
 ![Placeholder Image](/public/Storefront.png)
 
-For DEMO, use [Stripe Testing Cards](https://stripe.com/docs/testing)
-
 This is a repository for a Full Stack E-Commerce + Dashboard & CMS: Next.js 14 App Router, React, Tailwind, Prisma, MySQL
 
 Key Features:
